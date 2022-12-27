@@ -7,3 +7,16 @@ for (var i = 0; i < array.length; i++) {
     }, 3000);
   })(i);
 }
+
+function sum(n) {
+  let number = n;
+
+  return function repeater(b) {
+    if (!b) return number;
+
+    number += b;
+    return repeater;
+  };
+}
+
+console.log(sum(3)(4)(2)());
