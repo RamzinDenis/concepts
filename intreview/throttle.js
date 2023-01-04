@@ -1,4 +1,4 @@
-function throttle(cb, delay = 1000) {
+function throttle(cb, ms = 1000) {
   let isWaiting = false;
   let savedArgs = null;
   let savedThis = null;
@@ -24,16 +24,3 @@ function throttle(cb, delay = 1000) {
 }
 
 const func = throttle(() => console.log("throttle"), 1000);
-
-document.addEventListener("scroll", () => {
-  console.log("scroll");
-
-  func();
-});
-
-let obj = {
-  0: 1,
-  0: 2,
-};
-
-console.log(obj["0"] + obj[0]);

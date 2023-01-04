@@ -22,3 +22,16 @@ class Rabbit extends Animal {
 const rabbit = new Rabbit();
 
 console.log(rabbit.__proto__.__proto__ === Animal.prototype);
+
+class Cat {
+  static meow() {
+    console.log("meow", this);
+  }
+
+  run() {
+    console.log("run");
+    Cat.meow();
+  }
+}
+
+console.log(new Cat().run());
